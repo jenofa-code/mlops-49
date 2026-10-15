@@ -2,8 +2,12 @@
 version: 0.0
 os: linux
 
+files:
+  - source: /
+    destination: /home/ubuntu/student-predictor
+
 hooks:
-  ApplicationStop:
+  BeforeInstall:
     - location: scripts/stop_container.sh
       timeout: 60
       runas: root
