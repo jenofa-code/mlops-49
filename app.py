@@ -7,7 +7,7 @@ import numpy as np
 app = Flask(__name__)
 BASE_DIR = Path(__file__).resolve().parent
 MODEL_PATH = BASE_DIR / "student_model.pkl"
-MODEL_VERSION = "1.0"
+MODEL_VERSION = "2.0"
 
 # The Dockerfile trains and creates this model before starting the app.
 model = joblib.load(MODEL_PATH)
