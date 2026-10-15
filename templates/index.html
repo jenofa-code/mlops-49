@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Pass Prediction</title>
+<style>
+body{font-family:Arial;max-width:600px;margin:40px auto;padding:20px;}
+input,button{padding:10px;margin:6px 0;width:100%;}
+button{background:#0078d4;color:white;border:none;}
+.version{margin-top:20px;color:gray;}
+.result{margin-top:15px;font-weight:bold;font-size:22px;}
+</style>
+</head>
+<body>
+<h1>Student Pass/Fail Predictor</h1>
+<form method="POST">
+<input type="number" name="study_hours" placeholder="Study Hours" required>
+<input type="number" name="attendance" placeholder="Attendance %" required>
+<input type="number" name="internal_marks" placeholder="Internal Marks" required>
+<button type="submit">Predict</button>
+</form>
+{% if prediction %}<div class="result">Prediction: {{ prediction }}</div>{% endif %}
+{% if error %}<div class="result">{{ error }}</div>{% endif %}
+<div class="version">Model Version: {{ version }}</div>
+</body>
+</html>
